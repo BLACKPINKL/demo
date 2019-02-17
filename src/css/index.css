@@ -21,7 +21,6 @@
 .content {
     width: 900px;
     height: 600px;
-    background: rgba(0, 0, 0, 0.1);
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -615,18 +614,14 @@ width: 400px;
 .screen07 {
   background: url('../images/07-bg.png') center bottom;
 }
-.screen07 .star {
+
+.screen07 .star img {
+  display: none;
   position: absolute;
   top: 142px;
-  left: 155px;
+  left: 0;
 }
-.screen07 .star img {
-  margin-left: 2px;
-  display: none;
-}
-.screen07 .star img:nth-of-type(1) {
-  margin-left: 0;
-}
+
 .screen07 .text {
   position: absolute;
   top: 180px;

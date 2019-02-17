@@ -10,7 +10,8 @@ let config = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/dist/',
+    publicPath: WEBPACK_ENV === 'dev' ? '/dist/' :
+                '/shoppingCar/',
     filename: WEBPACK_ENV === 'dev' ? 'js/[name].js' :
               'js/[name].[hash].js'
   },
@@ -73,12 +74,13 @@ let config = {
    }
  },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
+    // new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
         template: './src/index.html',
         filename: 'index.html',
         minify: {
           collapseWhitespace: true,
+          removeComments: true,
           minifyJS: true,
           minifyCSS: true
         }

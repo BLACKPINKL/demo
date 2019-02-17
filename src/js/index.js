@@ -23,6 +23,9 @@ $(function() {
       }else if (index == 6 && nextIndex == 7) {
         $('.screen07 .text').addClass('show')
         $('.screen07 .star img').each(function(i, item) {
+          $(this).css({
+            left: 157 + (i * 20)
+          })
           // delay 可以做延迟
           // 必须乘以1000 因为单位是毫秒值
           $(this).delay(i * 0.4 * 1000).fadeIn()
