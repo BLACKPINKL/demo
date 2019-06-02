@@ -15,12 +15,22 @@ let config = {
     filename: WEBPACK_ENV === 'dev' ? 'js/[name].js' :
               'js/[name].[hash].js'
   },
+  mode: 'development',
   module: {
     rules: [
       {
         test: /\.css$/,
         use: [
           MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader'
+        ]
+      },
+      {
+        test: /\.less$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'less-loader',
           'css-loader',
           'postcss-loader'
         ]
@@ -74,7 +84,7 @@ let config = {
    }
  },
   plugins: [
-    // new webpack.HotModuleReplacementPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
         template: './src/index.html',
         filename: 'index.html',
@@ -103,8 +113,7 @@ let config = {
   devServer: {
     port: 3000,
     inline:true,
-    hot: true,
-    contentBase: path.resolve(__dirname, 'dist/')
+    hot: true
   }
 }
 module.exports = config

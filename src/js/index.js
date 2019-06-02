@@ -1,9 +1,11 @@
 import $ from 'jquery'
 import '../asset/jquery-fullpage/jquery.fullPage.css'
 import fullpage from '../asset/jquery-fullpage/jquery.fullPage.js'
+import '../css/normalize.css'
 import '../css/index.css'
 
 $(function() {
+  $('.loading-bg').delay(3000).fadeOut()
   $('.container').fullpage({
     sectionsColor: ["#fadd67", "#84a2d4", "#ef674d", "#ffeedd", "#d04759", "#84d9ed", "#8ac060"],
     verticalCentered: false,
@@ -60,7 +62,7 @@ $(function() {
         })
       })
       $('.screen08 .again').on('click', function() {
-        $('.now,.leaved,.show,.active').removeClass('now').removeClass('leaved').removeClass('show')
+        $('.now,.leaved,.boxleaved,.show,.active').removeClass('now').removeClass('leaved').removeClass('boxleaved').removeClass('show')
         .removeClass('active')
         /*2.4 加css属性  后果：加一个style属性*/
         /*2.5 用jquery方法  show() fadeIn() 后果：加一个style属性*/
