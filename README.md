@@ -13,6 +13,7 @@ npm start
 浏览器访问 http://localhost:3000/dist/
 
 <<<<<<< HEAD
-*线上地址 http://i.qinjianfei.top/shoppingCar/
+*线上地址 https://blackpinkl.github.io/demo/
 =======
+
 ### 基于jquery.fullpage实现的购物车宣传页
