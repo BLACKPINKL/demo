@@ -5,7 +5,7 @@ import '../css/normalize.css'
 import '../css/index.css'
 
 $(function() {
-  $('.loading-bg').delay(3000).fadeOut()
+  $('.loading-bg').delay(3000).fadeOut().remove()
   $('.container').fullpage({
     sectionsColor: ["#fadd67", "#84a2d4", "#ef674d", "#ffeedd", "#d04759", "#84d9ed", "#8ac060"],
     verticalCentered: false,
@@ -57,7 +57,7 @@ $(function() {
       //移动手的坐标
       $('.screen08').on('mousemove', function(e) {
         $(this).find('.hand').css({
-          left: e.clientX - 190,
+          left: e.clientX - 340,
           top: e.clientY - 100
         })
       })
