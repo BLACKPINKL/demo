@@ -11,7 +11,7 @@ let config = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: WEBPACK_ENV === 'dev' ? '/dist/' :
-                '/shoppingCar/',
+                '/demo/',
     filename: WEBPACK_ENV === 'dev' ? 'js/[name].js' :
               'js/[name].[hash].js'
   },
