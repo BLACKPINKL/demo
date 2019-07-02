@@ -4,8 +4,20 @@ import fullpage from '../asset/jquery-fullpage/jquery.fullPage.js'
 import '../css/normalize.css'
 import '../css/index.css'
 
+// 读取图片加载
+function loadImg(img) {
+  var sum = 0
+  img.each(function(index, el) {
+    if (el.complete) ++sum
+  })
+  return sum *= 100
+}
 $(function() {
-  $('.loading-bg').delay(3000).fadeOut().remove()
+  var $imgs = $('.container').find('img')
+  var count = loadImg($imgs)
+  // 开启loading动画
+  $('.loading-bg').delay(count).fadeOut()
+  // fullpage
   $('.container').fullpage({
     sectionsColor: ["#fadd67", "#84a2d4", "#ef674d", "#ffeedd", "#d04759", "#84d9ed", "#8ac060"],
     verticalCentered: false,
